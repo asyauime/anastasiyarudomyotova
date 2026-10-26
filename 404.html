@@ -1,140 +1,261 @@
 <!DOCTYPE html>
-
-<html lang="en"><style>#__framer-badge-container,#__framer-editorbar-container,[class*="framer-badge"],[class*="framer-editor"],iframe[src*="framer.com"]:not([src*="framerusercontent"]){display:none!important}</style>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>Page Not Found | Framer</title>
-<style>
-    /* Mirrors FramerStudio's empty state styles, see static/static.go. */
-    @font-face {
-      font-display: swap;
-      font-family: "Inter Variable UI";
-      font-style: normal;
-      font-weight: 100 900;
-      src: url("https://app.framerstatic.com/InterVariable.latin-5EYCRJRY.woff2")
-        format("woff2");
-    }
-
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Страница не найдена | Анастасия Рудомётова</title>
+  <meta name="description" content="Этой страницы нет. Вернитесь на главную — там проекты и контакты UX/UI дизайнера Анастасии Рудомётовой."/>
+  <meta name="robots" content="noindex"/>
+  <link href="https://framerusercontent.com/sites/icons/default-favicon-light.v1.png" media="(prefers-color-scheme: light)" rel="icon"/>
+  <link href="https://framerusercontent.com/sites/icons/default-favicon-dark.v1.png" media="(prefers-color-scheme: dark)" rel="icon"/>
+  <link href="https://framerusercontent.com/sites/icons/default-touch-icon.v3.png" rel="apple-touch-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&family=Playfair+Display:ital,wght@1,400;1,500;1,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
     :root {
-      --background: #fff;
-      --text: #666;
-      --text-title: #222;
-      --button-background: #f3f3f3;
-      --button-background-hover: #eee;
-      --button-text: #333;
-      --selection-background: rgba(0, 0, 0, 0.1);
-      --selection-text: #000;
+      --bg: rgb(246, 246, 246);
+      --ink: rgb(11, 11, 11);
+      --muted: rgb(92, 92, 92);
+      --accent: rgb(195, 131, 243);
+      --accent-strong: rgb(142, 82, 255);
+      --white: #fff;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #111;
-        --text: #999;
-        --text-title: #fff;
-        --button-background: #1f1f1f;
-        --button-background-hover: #262626;
-        --button-text: #fff;
-        --selection-background: rgba(255, 255, 255, 0.15);
-        --selection-text: #fff;
-        color-scheme: dark;
-      }
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      height: 100%;
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     body {
+      font-family: "Golos Text", sans-serif;
       display: flex;
-      box-sizing: border-box;
-      padding: 24px;
-      min-height: 100%;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 40px 0;
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: Roboto, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .nav {
+      font-family: "Golos Text", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .nav:hover { color: var(--ink); }
+
+    main {
+      flex: 1;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 0;
-      background-color: var(--background);
-      color: var(--text);
-      font-family:
-        "Inter Variable UI",
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      font-feature-settings:
-        "cv01" 1,
-        "cv05" 1,
-        "cv09" 1,
-        "cv11" 1;
+      text-align: center;
+      padding: 72px 24px 80px;
     }
 
-    ::selection {
-      background-color: var(--selection-background);
-      color: var(--selection-text);
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 100px;
+      color: var(--accent-strong);
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 28px;
     }
 
     h1 {
-      max-width: 200px;
-      margin: 15px 0 10px;
-      text-align: center;
-      text-wrap: balance;
-      color: var(--text-title);
-      font-size: 12px;
-      font-weight: 550;
-      line-height: 1;
-    }
-
-    p {
-      max-width: 200px;
       margin: 0;
-      font-size: 12px;
-      font-weight: 450;
-      letter-spacing: 0;
-      line-height: 1.4;
-      text-align: center;
-      text-wrap: balance;
+      font-family: "Golos Text", sans-serif;
+      font-size: clamp(40px, 7vw, 78px);
+      font-weight: 400;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      max-width: 16ch;
     }
 
-    a {
+    h1 em {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 42ch;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .cta {
       display: inline-flex;
-      height: 30px;
-      box-sizing: border-box;
-      padding: 0 10px;
-      margin-top: 15px;
-      background-color: var(--button-background);
-      border-radius: 8px;
-      color: var(--button-text);
-      font-size: 12px;
-      font-weight: 450;
-      letter-spacing: 0;
+      align-items: center;
+      gap: 8px;
+      margin-top: 36px;
+      padding: 16px 24px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 100px;
+      font-family: "Golos Text", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
       line-height: 1;
-      place-content: center;
-      place-items: center;
-      text-decoration: none;
-      transition: background-color 120ms ease;
+      transition: transform 160ms ease, opacity 160ms ease;
     }
 
-    a:focus-visible {
-      outline: 2px solid var(--text-title);
-      outline-offset: 2px;
+    .cta:hover { opacity: 0.88; }
+    .cta:focus-visible {
+      outline: 2px solid var(--accent-strong);
+      outline-offset: 3px;
     }
 
-    a:hover {
-      background-color: var(--button-background-hover);
+    .cta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .projects {
+      margin-top: 72px;
+      width: min(920px, 100%);
+      text-align: left;
+    }
+
+    .projects-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .project {
+      display: block;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 20px 22px;
+      transition: transform 160ms ease;
+    }
+
+    .project:hover { transform: translateY(-2px); }
+
+    .project h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+
+    .project p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer a:hover { color: var(--ink); }
+
+    .sep { opacity: 0.5; }
+
+    @media (min-width: 720px) {
+      .project-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 809.98px) {
+      .header { padding: 20px 20px 0; }
+      .logo { font-size: 16px; }
+      main { padding: 64px 20px 64px; }
     }
   </style>
+</head>
 <body>
-<svg fill="currentColor" height="21" overflow="visible" style="color: var(--text-title)" width="14" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 0v7H7L0 0ZM0 7h7l7 7H7v7l-7-7Z"></path>
-</svg>
-<h1>Page not found</h1>
-<p>This page doesn’t exist or has moved.</p>
-<a href="/">Back to home</a>
+  <header class="header">
+    <a class="logo" href="/">Анастасия Рудомётова</a>
+    <a class="nav" href="/#projects">Проекты</a>
+  </header>
+
+  <main>
+    <span class="tag">Ошибка 404</span>
+    <h1>Этой страницы<br><em>больше нет</em></h1>
+    <p class="lead">Ссылка устарела или адрес написан с ошибкой. Можно вернуться на главную или сразу открыть один из кейсов.</p>
+    <a class="cta" href="/">
+      На главную
+      <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <section class="projects" aria-label="Проекты">
+      <p class="projects-label">Возможно, вы искали</p>
+      <div class="project-list">
+        <a class="project" href="/marketplace-seller-dashboard-ux">
+          <h2>Кабинет селлера</h2>
+          <p>Доставка и фулфилмент для селлеров маркетплейсов</p>
+        </a>
+        <a class="project" href="/spb-tours-ux-case">
+          <h2>Сервис туров</h2>
+          <p>Онлайн-продажа туров из Санкт-Петербурга</p>
+        </a>
+        <a class="project" href="/3d-map-incident-monitoring">
+          <h2>3D-карта производства</h2>
+          <p>Мониторинг станков и редактор карт</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="mailto:gerahiny@gmail.com">mail</a>
+    <span class="sep">/</span>
+    <a href="https://t.me/asya_uime?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C!%20%D0%9F%D0%B8%D1%88%D1%83%20%D0%B2%D0%B0%D0%BC%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8">telegram</a>
+    <span class="sep">/</span>
+    <a href="https://ekaterinburg.hh.ru/resume/cb0a6656ff0d8f1db40039ed1f68357044626f">hh.ru</a>
+  </footer>
 </body>
 </html>
