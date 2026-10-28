@@ -209,22 +209,27 @@
   }
 }
 
-/* Ссылка на кейс: тёмный текст + фиолетовые стрелка и подчёркивание (контраст AA) */
+/* Ссылка на кейс: тёмный текст с ровным подчёркиванием, фиолетовая стрелка (контраст AA) */
 .about .link {
   display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  align-items: baseline;
+  gap: 8px;
   font-size: 18px;
+  line-height: 1.3;
   font-weight: 500;
   color: var(--text-primary);
+  text-decoration: none;
+}
+.about .link__text {
   text-decoration: underline;
   text-decoration-color: var(--accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  transition: color 0.2s ease;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
 }
 .about .link__arrow {
   color: var(--accent);
+  text-decoration: none;
   transition: transform 0.2s ease;
 }
 @media (hover: hover) {
@@ -247,7 +252,7 @@
   gap: 8px;
   min-width: 0;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 .about .heading__num {
   font-family: var(--font-accent);
