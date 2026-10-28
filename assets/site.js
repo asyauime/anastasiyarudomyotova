@@ -1,6 +1,7 @@
 // Свой скрипт сайта: анимации появления, мобильное меню, лайтбокс.
 (function () {
   "use strict";
+  window.siteReady = true;
 
   var reduceMotion =
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
