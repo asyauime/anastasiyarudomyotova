@@ -2,6 +2,12 @@
 
 /* ---------- Анимации ---------- */
 
+/* Появление при загрузке. Прячем блок, только если работает JS. */
+html.js [data-appear] {
+  opacity: 0.001;
+  transform: translateY(var(--appear-y, 0px));
+}
+
 /* Появление при прокрутке («Slide in bottom»). Прячем блок, только если работает JS. */
 html.js [data-reveal] {
   opacity: 0 !important;
