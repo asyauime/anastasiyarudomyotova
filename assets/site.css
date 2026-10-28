@@ -139,6 +139,13 @@ a[data-lightbox] {
 .lightbox.is-open {
   opacity: 1;
 }
+/* Закрытый лайтбокс не должен перекрывать страницу и ловить клики */
+.lightbox[hidden] {
+  display: none;
+}
+.lightbox:not(.is-open) {
+  pointer-events: none;
+}
 .lightbox__img {
   max-width: 100vw;
   max-height: 100vh;
