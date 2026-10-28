@@ -247,11 +247,49 @@
     });
   }
 
+
+  // ---------- Сдвиг за мышью (картинки в заголовке главной) ----------
+  // data-mouse="8" — на сколько пикселей сдвигать (минус — в обратную сторону).
+  // Пружина как во Framer: жёсткость 120, затухание 20.
+  function setupMouseParallax() {
+    var items = Array.prototype.slice.call(document.querySelectorAll("[data-mouse]"));
+    if (!items.length || reduceMotion) return;
+    if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var tx = 0, ty = 0, x = 0, y = 0, vx = 0, vy = 0, last = 0, running = false;
+    function frame(t) {
+      var dt = Math.min(0.064, (t - last) / 1000 || 0.016);
+      last = t;
+      vx += (120 * (tx - x) - 20 * vx) * dt;
+      vy += (120 * (ty - y) - 20 * vy) * dt;
+      x += vx * dt;
+      y += vy * dt;
+      items.forEach(function (el) {
+        var k = parseFloat(el.getAttribute("data-mouse")) || 0;
+        el.style.transform = "translateX(" + (x * k).toFixed(2) + "px) translateY(" + (y * k).toFixed(2) + "px)";
+      });
+      if (Math.abs(tx - x) + Math.abs(ty - y) + Math.abs(vx) + Math.abs(vy) > 0.001) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    }
+    window.addEventListener("mousemove", function (e) {
+      tx = (e.clientX / window.innerWidth - 0.5) * 2;
+      ty = (e.clientY / window.innerHeight - 0.5) * 2;
+      if (!running) {
+        running = true;
+        last = performance.now();
+        requestAnimationFrame(frame);
+      }
+    }, { passive: true });
+  }
+
   function init() {
     runAppear();
     runReveal();
     setupMenu();
     setupLightbox();
+    setupMouseParallax();
   }
 
   if (document.readyState === "loading") {
