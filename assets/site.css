@@ -221,3 +221,35 @@ a[data-lightbox] {
     margin-top: -22px;
   }
 }
+
+/* ---------- Главная: кнопка «Подробнее обо мне» ---------- */
+
+/* Две кнопки в блоке «Обо мне» переносятся на узких экранах */
+.site-erevaa {
+  flex-wrap: wrap !important;
+  row-gap: 12px !important;
+}
+/* Светлая кнопка: белый фон, тёмный текст и стрелка */
+.site-8s2c9.btn-light {
+  background-color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px #e2e2e6;
+}
+.site-8s2c9.btn-light h3.site-text {
+  --site-text-color: rgb(11, 11, 11) !important;
+}
+.site-8s2c9.btn-light .site-waq5no {
+  --17ht5cx: rgb(11, 11, 11) !important;
+  --fpzlwg: rgb(11, 11, 11) !important;
+}
+@media (hover: hover) {
+  .site-8s2c9.btn-light:hover {
+    background-color: rgb(246, 246, 246) !important;
+  }
+  .site-8s2c9.btn-light:hover h3.site-text {
+    --site-text-color: rgb(142, 82, 255) !important;
+  }
+  .site-8s2c9.btn-light:hover .site-waq5no {
+    --17ht5cx: rgb(142, 82, 255) !important;
+    --fpzlwg: rgb(142, 82, 255) !important;
+  }
+}
