@@ -7,6 +7,7 @@
 | --- | --- |
 | `index.html` | Главная |
 | `about.html` | Страница «Обо мне» |
+| `how-this-site-was-made.html` | Бонус-кейс «Как был сделан этот сайт» (в меню нет, вход с главной) |
 | `marketplace-seller-dashboard-ux.html` | Кейс «Личный кабинет селлеров» |
 | `spb-tours-ux-case.html` | Кейс «Туры из Петербурга» |
 | `3d-map-incident-monitoring.html` | Кейс «3D-карта мониторинга» |
@@ -15,6 +16,8 @@
 | `assets/fonts/` | Шрифты |
 | `assets/site.css` | Свои стили: наведение, меню, лайтбокс, анимации |
 | `assets/about.css` | Стили страницы «Обо мне» (токены цветов в начале файла) |
+| `assets/bonus.css` | Окно чата «Ася × Claude» и карточка бонус-кейса на главной |
+| `assets/story.css` | Стили страницы бонус-кейса |
 | `assets/site.js` | Свой скрипт: анимации появления, мобильное меню, лайтбокс |
 | `vercel.json` | Настройки хостинга Vercel (адреса без `.html`, кэш) |
 
@@ -47,3 +50,10 @@
 2. Замените `<div class="art__media art__placeholder" …>Рисунок 1</div>` на
    `<a class="art__media" href="assets/images/art-1.webp" data-lightbox=""><img src="assets/images/art-1.webp" alt="ПОДПИСЬ" width="1200" height="1200" loading="lazy"/></a>`
 3. Впишите ту же подпись в `<figcaption>` вместо «Подпись к работе».
+
+## Черновые блоки на странице бонус-кейса
+
+Блоки с `data-draft` (пунктирная рамка, «[ЗАПОЛНИТ АСЯ]») видны только в превью Vercel и на компьютере.
+На `asyauime.ru` и `anastasiyarudomyotova.vercel.app` они скрыты автоматически.
+Когда текст готов: впишите его вместо плейсхолдера и удалите у блока атрибут `data-draft` и класс `draft`.
+Раздел «07 Что я поняла» целиком помечен `data-draft`, поэтому пока не виден на сайте.
