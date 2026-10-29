@@ -1,0 +1,281 @@
+/* Страница «Как был сделан этот сайт». Основа — about.css и bonus.css. */
+
+/* ---------- 3.0 Шапка ---------- */
+
+.story .story-hero__main {
+  display: grid;
+  grid-template-columns: minmax(0, 50fr) minmax(0, 50fr);
+  align-items: center;
+  gap: 48px;
+}
+.story .story-hero__chat {
+  padding: 40px 24px;
+}
+.story .stats--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.story .btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+@media (hover: hover) {
+  .story .btn--ghost:hover {
+    background: var(--bg-card);
+    color: var(--accent);
+  }
+}
+
+/* Вводный абзац раздела */
+.story .lead {
+  max-width: 760px;
+}
+
+/* Подпись над карточкой («Проблема 1», «Ассистент»…) */
+.story .label {
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--text-tertiary);
+}
+
+/* ---------- 3.1 Проблемы, 3.5 Ошибки, 3.7 Выводы ---------- */
+
+.story .cards {
+  display: grid;
+  gap: 16px;
+}
+.story .cards--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.story .cards--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.story .cards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- 3.2 Роли ---------- */
+
+.story .card--soft {
+  background: var(--accent-soft);
+}
+
+/* ---------- 2.3 / 3.3 Правила ---------- */
+
+.story .rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.story .rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: var(--bg-card);
+}
+.story .rule__mark {
+  flex: none;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--accent);
+  transform: translateY(1px);
+}
+
+/* ---------- 2.2 / 3.4 Итерации ---------- */
+
+.story .iters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.story .iter {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+.story .iter__num {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--accent);
+}
+.story .iter__part {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.story .iter .chat__msg {
+  max-width: 100%;
+  align-self: stretch;
+  font-size: 16px;
+}
+.story .iter__result {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.story .iter__result-label {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #6a2fc4;
+}
+
+/* ---------- 3.6 Схема процесса ---------- */
+
+.story .flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+}
+.story .flow__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.story .flow__step + .flow__step::before {
+  content: "→";
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* ---------- Плейсхолдеры: видны только в превью ---------- */
+
+.story [data-draft] {
+  display: none;
+}
+html.show-drafts .story [data-draft] {
+  display: block;
+}
+html.show-drafts .story section[data-draft] {
+  display: grid;
+}
+.story .draft {
+  padding: 16px 20px;
+  border: 2px dashed var(--accent);
+  border-radius: 16px;
+  background: rgba(241, 234, 254, 0.5);
+  color: var(--text-secondary);
+}
+.story .draft strong {
+  color: var(--text-primary);
+}
+
+/* ---------- Финал ---------- */
+
+.story .story-end {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1199.98px) {
+  .story .story-hero__main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 42%);
+    gap: 32px;
+  }
+  .story .story-hero__chat {
+    padding: 28px 16px;
+  }
+  .story .cards--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .story .iter {
+    grid-template-columns: 32px minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .story .iter__result {
+    grid-column: 2 / -1;
+  }
+  .story .flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 40px;
+  }
+  .story .flow__step:nth-child(3)::before {
+    display: none;
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 809.98px) {
+  .story .story-hero__main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .story .story-hero__chat {
+    padding: 24px 12px;
+  }
+  .story .stats--3,
+  .story .cards--3,
+  .story .cards--2,
+  .story .rules,
+  .story .flow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .story .iter {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .story .iter__result {
+    grid-column: auto;
+  }
+  .story .iter .chat__msg {
+    align-self: flex-end;
+    max-width: 90%;
+  }
+  .story .story-hero .chat {
+    transform: rotate(-1deg);
+  }
+  .story .flow {
+    gap: 40px;
+  }
+  .story .flow__step + .flow__step::before,
+  .story .flow__step:nth-child(3)::before {
+    display: block;
+    content: "↓";
+    left: 0;
+    top: -32px;
+    transform: none;
+  }
+  .story .btn--ghost {
+    width: 100%;
+  }
+}
+
+/* Якорь «Читать историю ↓»: заголовок не прячется под липкой шапкой */
+.story .heading {
+  scroll-margin-top: 104px;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Пузырь реплики внутри итерации: вернуть отступы после общего сброса p */
+.story .iter p.chat__msg {
+  padding: 12px 16px;
+}
+/* «этот сайт» не разрывается между строками */
+.story .story-hero h1 .accent {
+  white-space: nowrap;
+}
