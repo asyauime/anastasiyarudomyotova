@@ -626,3 +626,12 @@ html.js .about .hero.is-visible .hero__photo {
     padding: 32px;
   }
 }
+
+/* Рисунки: без увеличения при «уменьшении движения» */
+@media (prefers-reduced-motion: reduce) {
+  .about a.art__media,
+  .about a.art__media:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -45,11 +45,9 @@
 
 ## Рисунки на странице «Обо мне»
 
-В `about.html` в разделе «04 Вне работы» стоят три заглушки «Рисунок 1–3». Чтобы заменить:
-1. Положите рисунки в `assets/images/` (например, `art-1.webp`).
-2. Замените `<div class="art__media art__placeholder" …>Рисунок 1</div>` на
-   `<a class="art__media" href="assets/images/art-1.webp" data-lightbox=""><img src="assets/images/art-1.webp" alt="ПОДПИСЬ" width="1200" height="1200" loading="lazy"/></a>`
-3. Впишите ту же подпись в `<figcaption>` вместо «Подпись к работе».
+Раздел «04 Вне работы» в `about.html`: три работы из `assets/images/drawing-*.webp` (1200×1200).
+Чтобы заменить работу: положите новый файл в `assets/images/` и поменяйте в `about.html` путь (в `href` и `src`),
+`alt` и текст в `<figcaption>`. Подпись из `<figcaption>` сама появляется под картинкой в лайтбоксе.
 
 ## Черновые блоки на странице бонус-кейса
 

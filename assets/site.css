@@ -253,3 +253,26 @@ a[data-lightbox] {
     --fpzlwg: rgb(142, 82, 255) !important;
   }
 }
+
+/* Лайтбокс с подписью (рисунки на «Обо мне»): картинка не больше 90% экрана, подпись под ней */
+.lightbox {
+  flex-direction: column;
+  gap: 14px;
+}
+.lightbox.has-caption .lightbox__img {
+  max-width: 90vw;
+  max-height: calc(90vh - 48px);
+  border-radius: 12px;
+}
+.lightbox__caption {
+  margin: 0;
+  max-width: 90vw;
+  color: #ffffff;
+  font: 400 15px/1.3 "Roboto", sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+/* Плотнее затемнение, чтобы подпись и счётчик не спорили с текстом страницы */
+.lightbox.has-caption {
+  background: rgba(0, 0, 0, 0.85);
+}

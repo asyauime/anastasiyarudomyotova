@@ -134,7 +134,7 @@
   }
 
   function setupLightbox() {
-    var box, img, counter, prevBtn, nextBtn, closeBtn;
+    var box, img, caption, counter, prevBtn, nextBtn, closeBtn;
     var list = [];
     var index = 0;
     var lastFocus = null;
@@ -148,11 +148,13 @@
       box.setAttribute("aria-label", "Просмотр изображения");
       box.innerHTML =
         '<img class="lightbox__img" alt="">' +
+        '<p class="lightbox__caption" hidden></p>' +
         '<div class="lightbox__counter"></div>' +
         '<button type="button" class="lightbox__btn lightbox__prev" aria-label="Предыдущее">' + ARROW_LEFT + "</button>" +
         '<button type="button" class="lightbox__btn lightbox__next" aria-label="Следующее">' + ARROW_RIGHT + "</button>" +
         '<button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть">' + CROSS + "</button>";
       img = box.querySelector(".lightbox__img");
+      caption = box.querySelector(".lightbox__caption");
       counter = box.querySelector(".lightbox__counter");
       prevBtn = box.querySelector(".lightbox__prev");
       nextBtn = box.querySelector(".lightbox__next");
@@ -192,6 +194,13 @@
       img.src = list[index].getAttribute("href");
       var alt = list[index].querySelector("img");
       img.alt = alt ? alt.alt : "";
+      // Подпись: из data-caption ссылки или из <figcaption> рядом с картинкой.
+      var fig = list[index].closest("figure");
+      var capEl = fig && fig.querySelector("figcaption");
+      var text = list[index].getAttribute("data-caption") || (capEl ? capEl.textContent.trim() : "");
+      caption.textContent = text;
+      caption.hidden = !text;
+      box.classList.toggle("has-caption", !!text);
       counter.textContent = index + 1 + " / " + n;
       var many = n > 1;
       prevBtn.hidden = !many;
