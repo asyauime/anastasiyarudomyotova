@@ -1,0 +1,650 @@
+/* Страница «Обо мне». Токены — из ТЗ, шрифты — стили проекта. */
+
+.about {
+  /* Цвета */
+  --bg-page: #f5f5f5;
+  --bg-card: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #4a4a52;
+  --text-tertiary: #6b6b73;
+  --accent: #9655f0;
+  --accent-soft: #f1eafe;
+  --border: #e2e2e6;
+  --cta-bg: #111111;
+
+  /* Шрифты проекта */
+  --font-display: "Golos Text", "Golos Text Placeholder", sans-serif;
+  --font-accent: "Playfair Display", "Playfair Display Placeholder", serif;
+  --font-body: "Roboto", "Roboto Placeholder", sans-serif;
+  --font-button: "Onest", "Onest Placeholder", sans-serif;
+
+  /* Сетка */
+  --side: 120px;
+  --section-gap: 96px;
+
+  order: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px var(--side) 120px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+.about *,
+.about *::before,
+.about *::after {
+  box-sizing: border-box;
+}
+.about h1,
+.about h2,
+.about h3,
+.about p,
+.about ul,
+.about ol,
+.about figure,
+.about dl,
+.about dd {
+  margin: 0;
+  padding: 0;
+}
+.about ul {
+  list-style: none;
+}
+.about a {
+  color: inherit;
+}
+
+/* ---------- Текстовые стили ---------- */
+
+.about .display-h2,
+.about .display-h3,
+.about .display-h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  font-feature-settings: "blwf" on, "cv03" on, "cv04" on, "cv09" on, "cv11" on;
+  color: var(--text-primary);
+}
+.about .display-h2 {
+  font-size: 48px;
+  line-height: 1.3;
+}
+.about .display-h3 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+.about .display-h4 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+.about .accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+.about .body {
+  font-size: 18px;
+  line-height: 1.3;
+}
+.about .name {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.about .supporting {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.about .secondary {
+  color: var(--text-secondary);
+}
+.about .tertiary {
+  color: var(--text-tertiary);
+}
+
+/* ---------- Компоненты ---------- */
+
+/* Tag */
+.about .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.about .tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* Card basic */
+.about .card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+/* Button */
+.about .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.about .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 48px;
+  padding: 0 12px 0 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-button);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.about .btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.about .btn__icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.about .btn--primary {
+  background: var(--cta-bg);
+  color: #ffffff;
+}
+.about .btn--secondary {
+  background: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+.about .btn--white {
+  background: #ffffff;
+  color: var(--text-primary);
+}
+.about .btn--outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+@media (hover: hover) {
+  .about .btn--primary:hover {
+    color: rgb(195, 131, 243);
+  }
+  .about .btn--secondary:hover,
+  .about .btn--white:hover {
+    background: rgb(246, 246, 246);
+    color: var(--accent);
+  }
+  .about .btn--outline:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Ссылка на кейс: тёмный текст с ровным подчёркиванием, фиолетовая стрелка (контраст AA) */
+.about .link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.about .link__text {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
+}
+.about .link__arrow {
+  color: var(--accent);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+@media (hover: hover) {
+  .about .link:hover .link__arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* Видимый фокус для клавиатуры */
+.about a:focus-visible,
+.about button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Heading: номер + заголовок */
+.about .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.about .heading__num {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+/* Раздел: Heading слева, контент справа */
+.about .section {
+  display: grid;
+  grid-template-columns: max(20%, 240px) minmax(0, 1fr);
+  gap: 24px 48px;
+  align-items: start;
+}
+.about .section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+
+/* ---------- 3.0 Шапка ---------- */
+
+.about .hero {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.about .hero__main {
+  display: grid;
+  grid-template-columns: 55% minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+.about .hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.about .hero__photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+.about .hero__photo {
+  display: block;
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(17, 17, 17, 0.1);
+  transform: rotate(-3deg);
+}
+
+.about .stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.about .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about .stat__num {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+/* ---------- 3.1 Чем я занимаюсь ---------- */
+
+.about .text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+}
+
+/* ---------- 3.2 Опыт: таймлайн ---------- */
+
+.about .timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 32px;
+}
+.about .timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.about .job {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about .job::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 4px solid var(--accent);
+}
+.about .job__product {
+  margin-top: 8px;
+}
+.about .results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+.about .results li {
+  position: relative;
+  padding-left: 20px;
+}
+.about .results li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.about .job .link {
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+/* ---------- 3.3 Как я работаю ---------- */
+
+.about .steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.about .step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about .step__example {
+  margin-top: auto;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.about .step__example-label {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ---------- 3.4 Вне работы: галерея ---------- */
+
+.about .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.about .art {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about .art__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.about .art__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about a.art__media {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (hover: hover) {
+  .about a.art__media:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(17, 17, 17, 0.1);
+  }
+}
+/* Заглушка, пока нет рисунков */
+.about .art__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border);
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+/* ---------- 3.5 Образование ---------- */
+
+.about .edu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 24px;
+}
+.about .edu__row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 8px 24px;
+  align-items: baseline;
+  padding: 16px 0;
+}
+.about .edu__row + .edu__row {
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- 3.6 CTA ---------- */
+
+.about .cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 64px;
+  border-radius: 32px;
+  background: var(--cta-bg);
+  color: #ffffff;
+}
+.about .cta .display-h3 {
+  color: #ffffff;
+  max-width: 760px;
+}
+.about .cta__note {
+  color: rgba(255, 255, 255, 0.7);
+}
+.about .cta .buttons {
+  margin-top: 8px;
+}
+
+/* ---------- Анимации: slide in bottom, один раз ---------- */
+
+html.js .about [data-reveal] {
+  transform: translateY(32px) !important;
+}
+html.js .about [data-reveal].is-visible {
+  transform: none !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+html.js .about .hero .hero__photo {
+  transform: rotate(0deg);
+}
+html.js .about .hero.is-visible .hero__photo {
+  transform: rotate(-3deg);
+  transition: transform 0.6s ease-out 0.15s;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .about [data-reveal],
+  html.js .about .hero .hero__photo {
+    transition: none !important;
+  }
+  html.js .about [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html.js .about .hero .hero__photo {
+    transform: rotate(-3deg);
+  }
+}
+
+/* ---------- 1200 ---------- */
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  .about .hero__main {
+    gap: 32px;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1199.98px) {
+  .about {
+    --side: 24px;
+    --section-gap: 80px;
+    padding-top: 32px;
+    padding-bottom: 96px;
+  }
+  .about .section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about .hero__main {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 24px;
+  }
+  .about .hero__photo {
+    width: 240px;
+    height: 300px;
+  }
+  .about .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 809.98px) {
+  .about {
+    --side: 16px;
+    --section-gap: 64px;
+    padding-top: 24px;
+    padding-bottom: 64px;
+  }
+  .about .hero__main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .about .hero__photo-wrap {
+    order: -1;
+  }
+  .about .hero__photo {
+    width: 220px;
+    height: 280px;
+  }
+  .about .hero .buttons,
+  .about .cta .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .about .hero .btn,
+  .about .cta .btn {
+    width: 100%;
+  }
+  .about .stats,
+  .about .steps,
+  .about .gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about .timeline {
+    padding-left: 0;
+  }
+  .about .timeline::before,
+  .about .job::before {
+    display: none;
+  }
+  .about .edu {
+    padding: 8px 16px;
+  }
+  .about .edu__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .about .cta {
+    padding: 32px;
+  }
+}
+
+/* Рисунки: без увеличения при «уменьшении движения» */
+@media (prefers-reduced-motion: reduce) {
+  .about a.art__media,
+  .about a.art__media:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Карточки-слова под шапкой: крупная строка в одну линию, размер одинаковый у всех четырёх */
+@media (min-width: 1200px) {
+  .about .stats--words .stat__num {
+    white-space: nowrap;
+    font-size: 28px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  .about .stats--words .stat__num {
+    font-size: 22px;
+  }
+}

@@ -221,3 +221,58 @@ a[data-lightbox] {
     margin-top: -22px;
   }
 }
+
+/* ---------- Главная: кнопка «Подробнее обо мне» ---------- */
+
+/* Две кнопки в блоке «Обо мне» переносятся на узких экранах */
+.site-erevaa {
+  flex-wrap: wrap !important;
+  row-gap: 12px !important;
+}
+/* Светлая кнопка: белый фон, тёмный текст и стрелка */
+.site-8s2c9.btn-light {
+  background-color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px #e2e2e6;
+}
+.site-8s2c9.btn-light h3.site-text {
+  --site-text-color: rgb(11, 11, 11) !important;
+}
+.site-8s2c9.btn-light .site-waq5no {
+  --17ht5cx: rgb(11, 11, 11) !important;
+  --fpzlwg: rgb(11, 11, 11) !important;
+}
+@media (hover: hover) {
+  .site-8s2c9.btn-light:hover {
+    background-color: rgb(246, 246, 246) !important;
+  }
+  .site-8s2c9.btn-light:hover h3.site-text {
+    --site-text-color: rgb(142, 82, 255) !important;
+  }
+  .site-8s2c9.btn-light:hover .site-waq5no {
+    --17ht5cx: rgb(142, 82, 255) !important;
+    --fpzlwg: rgb(142, 82, 255) !important;
+  }
+}
+
+/* Лайтбокс с подписью (рисунки на «Обо мне»): картинка не больше 90% экрана, подпись под ней */
+.lightbox {
+  flex-direction: column;
+  gap: 14px;
+}
+.lightbox.has-caption .lightbox__img {
+  max-width: 90vw;
+  max-height: calc(90vh - 48px);
+  border-radius: 12px;
+}
+.lightbox__caption {
+  margin: 0;
+  max-width: 90vw;
+  color: #ffffff;
+  font: 400 15px/1.3 "Roboto", sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+/* Плотнее затемнение, чтобы подпись и счётчик не спорили с текстом страницы */
+.lightbox.has-caption {
+  background: rgba(0, 0, 0, 0.85);
+}
