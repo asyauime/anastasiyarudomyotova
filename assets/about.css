@@ -635,3 +635,16 @@ html.js .about .hero.is-visible .hero__photo {
     transition: none !important;
   }
 }
+
+/* Карточки-слова под шапкой: крупная строка в одну линию, размер одинаковый у всех четырёх */
+@media (min-width: 1200px) {
+  .about .stats--words .stat__num {
+    white-space: nowrap;
+    font-size: 28px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  .about .stats--words .stat__num {
+    font-size: 22px;
+  }
+}
