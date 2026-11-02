@@ -270,6 +270,7 @@ html.js [data-reveal].is-visible .chat__body > :nth-child(4) { transition-delay:
 @media (max-width: 809.98px) {
   .bonus-wrap {
     padding: 0 16px 64px;
+    order: 3;
   }
   .bonus {
     grid-template-columns: minmax(0, 1fr);
