@@ -189,8 +189,8 @@ html.show-drafts .story section[data-draft] {
 /* ---------- Tablet ---------- */
 @media (max-width: 1199.98px) {
   .story .story-hero__main {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 42%);
-    gap: 32px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
   }
   .story .story-hero__chat {
     padding: 28px 16px;
@@ -257,7 +257,7 @@ html.show-drafts .story section[data-draft] {
     width: 100%;
   }
   .story .story-end .btn {
-    width: 100%;
+  width: 100%;
   }
 }
 
