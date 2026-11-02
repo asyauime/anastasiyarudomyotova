@@ -256,6 +256,9 @@ html.show-drafts .story section[data-draft] {
   .story .btn--ghost {
     width: 100%;
   }
+  .story .story-end .btn {
+    width: 100%;
+  }
 }
 
 /* Якорь «Читать историю ↓»: заголовок не прячется под липкой шапкой */
