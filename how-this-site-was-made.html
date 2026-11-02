@@ -20,7 +20,7 @@
 <meta content="width=device-width" name="viewport"/>
 
 <title>Как я сделала сайт-портфолио с Claude — Анастасия Рудомётова</title>
-<meta content="Бонус-кейс: как я пересобрала портфолио вместе с ИИ — правила, споры, ошибки и переход от Framer к коду." name="description"/>
+<meta content="Бонус-кейс: как я пересобрала портфолио вместе с ИИ — правила, споры, ошибки и переход к коду." name="description"/>
 
 
 
@@ -180,10 +180,10 @@
       <div class="hero__text">
         <span class="tag">Бонусный проект · Дизайн + ИИ</span>
         <h1 class="display-h2" id="story-title">Как был сделан <span class="accent">этот сайт</span></h1>
-        <p class="body secondary">Я пересобрала своё портфолио вместе с ИИ-ассистентом Claude: от разбора резюме до кода на GitHub. Здесь про процесс, споры и правила, без которых ИИ не помогает, а мешает.</p>
-        <div class="buttons">
+        <p class="body secondary">Я пересобрала своё портфолио вместе с ИИ-ассистентом Claude. Я не делегировала ИИ ответственность за дизайн. Я выстроила процесс, в котором модели ускоряют производство, а я отвечаю за постановку задачи, визуальное направление, достоверность содержания и качество результата</p>
+        <!-- <div class="buttons">
           <a class="btn btn--ghost" href="#s1">Читать историю ↓</a>
-        </div>
+        </div> -->
       </div>
       <div class="lav story-hero__chat">
         <div class="chat" role="img" aria-label="Фрагмент переписки Аси с Claude о дизайне обложек"><div class="chat__head"><span class="chat__dot"></span><span class="chat__dot"></span><span class="chat__dot"></span><span class="chat__title">Ася × Claude</span></div><div class="chat__body"><div class="chat__msg chat__msg--me">Мне не нравится главная и обложки проектов. Они какие-то блёклые</div><div class="chat__msg chat__msg--ai">Собрала новый вариант: яркие обложки и новая главная</div><div class="chat__msg chat__msg--me">Давай сделаем обложки более пастельными</div><div class="chat__msg chat__msg--ai chat__typing"><span></span><span></span><span></span></div></div></div>
@@ -201,11 +201,11 @@
   <section class="section" data-reveal="" aria-labelledby="s1">
     <h2 class="heading" id="s1"><span class="heading__num">01</span><span class="display-h3">С чего началось</span></h2>
     <div class="section__content">
-      <p class="body lead">Всё началось не с сайта, а с резюме. Сервис проверки резюме поставил 73 балла и указал на слабые места, которые потом нашлись и в портфолио.</p>
+      <p class="body lead">Всё началось не с сайта, а с резюме. Сервис проверки резюме поставил 73 балла и указал на слабые места, которые также нашлись и в портфолио</p>
       <ul class="cards cards--3">
-        <li class="card"><span class="label">Проблема 1</span><h3 class="display-h4">Цифры не сходились</h3><p class="body secondary">В резюме, на сайте и в кейсах одни и те же результаты были записаны по-разному.</p></li>
-        <li class="card"><span class="label">Проблема 2</span><h3 class="display-h4">Кейсы читались как статьи</h3><p class="body secondary">Сплошной текст, результаты в самом конце, скриншоты целых страниц.</p></li>
-        <li class="card"><span class="label">Проблема 3</span><h3 class="display-h4">Нет свежего опыта</h3><p class="body secondary">Самые сильные проекты с текущей работы на сайт не попали.</p></li>
+        <li class="card"><span class="label">Проблема 1</span><h3 class="display-h4">Резюме не проходило фильтры</h3><p class="body secondary">Резюме не проходило автоматические фильтры, из-за чего приходили автоотказы</p></li>
+        <li class="card"><span class="label">Проблема 2</span><h3 class="display-h4">Портфолио не оформлено</h3><p class="body secondary">Портфолио было не оформлено, что не красило меня как дизайнера</p></li>
+        <li class="card"><span class="label">Проблема 3</span><h3 class="display-h4">Нет времени на разработку сайта</h3><p class="body secondary">Для полноценной разработки сайта вручную ушло бы много времени, которого у меня не было</p></li>
       </ul>
     </div>
   </section>
@@ -214,10 +214,10 @@
   <section class="section" data-reveal="" aria-labelledby="s2">
     <h2 class="heading" id="s2"><span class="heading__num">02</span><span class="display-h3">Как распределили роли</span></h2>
     <div class="section__content">
-      <p class="body lead">ИИ не делал „за меня“. Я отвечала за факты, решения и вкус, ассистент — за черновики, вопросы и рутину.</p>
+      <p class="body lead">Я отвечала за факты, решения и вкус, ассистент — за технические задания, первичную проверку и рутину.</p>
       <ul class="cards cards--2">
-        <li class="card"><span class="label">Арт-директор и автор</span><h3 class="display-h4">Я</h3><p class="body secondary">Факты и цифры из проектов, выбор направления, финальное слово по каждому блоку. Дизайн-система: компоненты, стили, шаблоны.</p></li>
-        <li class="card card--soft"><span class="label">Ассистент</span><h3 class="display-h4">Claude</h3><p class="body secondary">Черновики текстов кейсов, уточняющие вопросы, прототипы страниц, рутина во Framer через браузер, ТЗ для разработки и проверка результата по ТЗ.</p></li>
+        <li class="card"><span class="label">Арт-директор и автор</span><h3 class="display-h4">Я</h3><p class="body secondary">Факты и цифры из проектов, выбор направления, финальное слово по каждому блоку</p></li>
+        <li class="card card--soft"><span class="label">Ассистент</span><h3 class="display-h4">Claude</h3><p class="body secondary">Черновики текстов кейсов, уточняющие вопросы, прототипы страниц, ТЗ для Claude code и проверка результата по ТЗ</p></li>
       </ul>
     </div>
   </section>
@@ -228,10 +228,10 @@
     <div class="section__content">
       <p class="body lead">Без договорённостей ИИ начинает додумывать. Вот правила, по которым мы работали.</p>
       <ul class="rules">
-        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Делать по одному блоку и показывать результат</span></li>
-        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Работать в моих компонентах, стилях и приёмах</span></li>
+        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Делать по одной небольшой фиче и показывать результат</span></li>
+        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Всегда задавать уточняющие вопросы</span></li>
         <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Если что-то описано плохо — править и задавать вопросы</span></li>
-        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Не выдумывать цифры: метрик нет — значит, нет</span></li>
+        <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Не выдумывать цифры и данные</span></li>
         <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Перед вводом чисел проверять, что поле в фокусе</span></li>
         <li class="rule"><span class="rule__mark" aria-hidden="true">✶</span><span class="body">Ничего не публиковать без моего „да“</span></li>
       </ul>
