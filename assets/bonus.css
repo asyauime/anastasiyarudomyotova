@@ -288,7 +288,7 @@ html.js [data-reveal].is-visible .chat__body > :nth-child(4) { transition-delay:
   }
 
   .bonus__text {
-    order: 0;
+    order: 1;
     gap: 8px;
   }
 
