@@ -215,6 +215,7 @@ html.js [data-reveal].is-visible .chat__body > :nth-child(4) { transition-delay:
   font-size: 18px;
   white-space: nowrap;
   transition: color 0.3s ease;
+   order: 3;
 }
 .bonus__sticker {
   position: absolute;
