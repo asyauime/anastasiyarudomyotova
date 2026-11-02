@@ -261,33 +261,46 @@ html.js [data-reveal].is-visible .chat__body > :nth-child(4) { transition-delay:
   .bonus-wrap {
     padding: 0 24px 80px;
   }
+
   .bonus {
-    grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
-    gap: 40px;
-    padding: 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .bonus__text {
+    order: 0;
+    gap: 12px;
   }
 }
+
 /* Phone */
 @media (max-width: 809.98px) {
   .bonus-wrap {
     padding: 0 16px 64px;
     order: 3;
   }
+
   .bonus {
     grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-    padding: 24px;
+    gap: 16px;
+    padding: 16px;
   }
+
   .bonus__text {
-    order: -1;
+    order: 0;
+    gap: 8px;
   }
+
   .bonus__btn {
     width: 100%;
     justify-content: center;
   }
+
   .bonus .chat {
     transform: rotate(-1deg);
   }
+
   .bonus__sticker {
     width: 56px;
     height: 56px;
