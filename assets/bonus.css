@@ -282,13 +282,13 @@ html.js [data-reveal].is-visible .chat__body > :nth-child(4) { transition-delay:
 
   .bonus {
     grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+    gap: 12px;
     padding: 16px;
   }
 
   .bonus__text {
     order: 1;
-    gap: 8px;
+    gap: 16px;
   }
 
   .bonus__btn {
